@@ -1,0 +1,6 @@
+POA [300]
+Let's practice Padding Oracle Attack.
+
+nc 140.112.31.97 30000
+
+server.py

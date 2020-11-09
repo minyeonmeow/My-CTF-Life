@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"path": "../../../hw/crypto02-rsa"
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu",
+	"settings": {}
+}

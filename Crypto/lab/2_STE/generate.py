@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+from Crypto.Util.number import *
+
+def pad(data, block_size):
+    if len(data) > block_size - 2:
+        raise ValueError("message too big")
+    return b'\x00' + b'\xff' * (block_size - 2 - len(data)) + b'\x00' + data
+    # know the padding
+
+FLAG = open('./flag', 'rb').read()
+assert len(FLAG) == 16 # flag_len = 16
+
+p = getPrime(512)
+q = getPrime(512)
+n = p * q
+e = 3 # e too small
+
+m = bytes_to_long(pad(FLAG, 128))
+c = pow(m, e, n)
+print(f'n = {n}')
+print(f'c = {c}')

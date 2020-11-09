@@ -1,0 +1,6 @@
+[HW 0x02] LSB [250]
+Let's practice LSB Oracle Attack.
+
+nc 140.112.31.97 30001
+
+server.py
