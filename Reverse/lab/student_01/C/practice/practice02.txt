@@ -1,0 +1,47 @@
+000000000000071a <main>: 
+ 71a:   55                      push   rbp
+ 71b:   48 89 e5                mov    rbp,rsp
+ 71e:   48 83 ec 20             sub    rsp,0x20
+ 722:   64 48 8b 04 25 28 00    mov    rax,QWORD PTR fs:0x28
+ 729:   00 00
+ 72b:   48 89 45 f8             mov    QWORD PTR [rbp-0x8],rax
+ 72f:   31 c0                   xor    eax,eax
+ 731:   48 8d 45 ec             lea    rax,[rbp-0x14]
+ 735:   48 89 c6                mov    rsi,rax
+ 738:   48 8d 3d 15 01 00 00    lea    rdi,[rip+0x115]        # 854 <_IO_stdin_used+0x4>
+ 73f:   b8 00 00 00 00          mov    eax,0x0
+ 744:   e8 a7 fe ff ff          call   5f0 <__isoc99_scanf@plt>
+ 749:   c7 45 f0 00 00 00 00    mov    DWORD PTR [rbp-0x10],0x0
+ 750:   eb 54                   jmp    7a6 <main+0x8c>
+ 752:   c7 45 f4 00 00 00 00    mov    DWORD PTR [rbp-0xc],0x0
+ 759:   eb 04                   jmp    75f <main+0x45>
+ 75b:   83 45 f4 04             add    DWORD PTR [rbp-0xc],0x4
+ 75f:   8b 45 f4                mov    eax,DWORD PTR [rbp-0xc]
+ 762:   3b 45 f0                cmp    eax,DWORD PTR [rbp-0x10]
+ 765:   7c f4                   jl     75b <main+0x41>
+ 767:   8b 55 f4                mov    edx,DWORD PTR [rbp-0xc]
+ 76a:   8b 45 f0                mov    eax,DWORD PTR [rbp-0x10]
+ 76d:   89 c6                   mov    esi,eax
+ 76f:   48 8d 3d e1 00 00 00    lea    rdi,[rip+0xe1]        # 857 <_IO_stdin_used+0x7>
+ 776:   b8 00 00 00 00          mov    eax,0x0
+ 77b:   e8 60 fe ff ff          call   5e0 <printf@plt>
+ 780:   eb 1a                   jmp    79c <main+0x82>
+ 782:   8b 45 f4                mov    eax,DWORD PTR [rbp-0xc]
+ 785:   89 c6                   mov    esi,eax
+ 787:   48 8d 3d c6 00 00 00    lea    rdi,[rip+0xc6]        # 854 <_IO_stdin_used+0x4>
+ 78e:   b8 00 00 00 00          mov    eax,0x0
+ 793:   e8 48 fe ff ff          call   5e0 <printf@plt>
+ 798:   83 6d f4 01             sub    DWORD PTR [rbp-0xc],0x1
+ 79c:   83 7d f4 00             cmp    DWORD PTR [rbp-0xc],0x0
+ 7a0:   7f e0                   jg     782 <main+0x68>
+ 7a2:   83 45 f0 01             add    DWORD PTR [rbp-0x10],0x1
+ 7a6:   83 7d f0 63             cmp    DWORD PTR [rbp-0x10],0x63
+ 7aa:   7e a6                   jle    752 <main+0x38>
+ 7ac:   b8 00 00 00 00          mov    eax,0x0
+ 7b1:   48 8b 4d f8             mov    rcx,QWORD PTR [rbp-0x8]
+ 7b5:   64 48 33 0c 25 28 00    xor    rcx,QWORD PTR fs:0x28
+ 7bc:   00 00
+ 7be:   74 05                   je     7c5 <main+0xab>
+ 7c0:   e8 0b fe ff ff          call   5d0 <__stack_chk_fail@plt>
+ 7c5:   c9                      leave
+ 7c6:   c3                      ret

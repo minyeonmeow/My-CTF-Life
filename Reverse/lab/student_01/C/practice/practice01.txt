@@ -1,0 +1,44 @@
+ 64a:   55                      push   rbp
+ 64b:   48 89 e5                mov    rbp,rsp
+ 64e:   48 83 ec 20             sub    rsp,0x20
+ 652:   89 7d fc                mov    DWORD PTR [rbp-0x4],edi
+ 655:   48 89 75 f0             mov    QWORD PTR [rbp-0x10],rsi
+ 659:   48 89 55 e8             mov    QWORD PTR [rbp-0x18],rdx
+ 65d:   83 7d fc 00             cmp    DWORD PTR [rbp-0x4],0x0
+ 661:   7f 45                   jg     6a8 <main+0x5e>
+ 663:   83 7d fc 00             cmp    DWORD PTR [rbp-0x4],0x0
+ 667:   75 13                   jne    67c <main+0x32>
+ 669:   48 8d 3d 18 01 00 00    lea    rdi,[rip+0x118]        # 788 <_IO_stdin_used+0x8>
+ 670:   b8 00 00 00 00          mov    eax,0x0
+ 675:   e8 a6 fe ff ff          call   520 <printf@plt>
+ 67a:   eb 75                   jmp    6f1 <main+0xa7>
+ 67c:   83 7d fc 00             cmp    DWORD PTR [rbp-0x4],0x0
+ 680:   79 13                   jns    695 <main+0x4b>
+ 682:   48 8d 3d 0b 01 00 00    lea    rdi,[rip+0x10b]        # 794 <_IO_stdin_used+0x14>
+ 689:   b8 00 00 00 00          mov    eax,0x0
+ 68e:   e8 8d fe ff ff          call   520 <printf@plt>
+ 693:   eb 5c                   jmp    6f1 <main+0xa7>
+ 695:   48 8d 3d 14 01 00 00    lea    rdi,[rip+0x114]        # 7b0 <_IO_stdin_used+0x30>
+ 69c:   b8 00 00 00 00          mov    eax,0x0
+ 6a1:   e8 7a fe ff ff          call   520 <printf@plt>
+ 6a6:   eb 49                   jmp    6f1 <main+0xa7>
+ 6a8:   83 7d fc 05             cmp    DWORD PTR [rbp-0x4],0x5
+ 6ac:   7f 13                   jg     6c1 <main+0x77>
+ 6ae:   48 8d 3d 29 01 00 00    lea    rdi,[rip+0x129]        # 7de <_IO_stdin_used+0x5e>
+ 6b5:   b8 00 00 00 00          mov    eax,0x0
+ 6ba:   e8 61 fe ff ff          call   520 <printf@plt>
+ 6bf:   eb 30                   jmp    6f1 <main+0xa7>
+ 6c1:   83 7d fc 05             cmp    DWORD PTR [rbp-0x4],0x5
+ 6c5:   7e 19                   jle    6e0 <main+0x96>
+ 6c7:   83 7d fc 09             cmp    DWORD PTR [rbp-0x4],0x9
+ 6cb:   7f 13                   jg     6e0 <main+0x96>
+ 6cd:   48 8d 3d 1e 01 00 00    lea    rdi,[rip+0x11e]        # 7f2 <_IO_stdin_used+0x72>
+ 6d4:   b8 00 00 00 00          mov    eax,0x0
+ 6d9:   e8 42 fe ff ff          call   520 <printf@plt>
+ 6de:   eb 11                   jmp    6f1 <main+0xa7>
+ 6e0:   48 8d 3d 1f 01 00 00    lea    rdi,[rip+0x11f]        # 806 <_IO_stdin_used+0x86>
+ 6e7:   b8 00 00 00 00          mov    eax,0x0
+ 6ec:   e8 2f fe ff ff          call   520 <printf@plt>
+ 6f1:   b8 00 00 00 00          mov    eax,0x0
+ 6f6:   c9                      leave
+ 6f7:   c3                      ret
